@@ -1,0 +1,344 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+}
+
+header {
+    background-color: #fff;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo-anchor, .profile-anchor {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    gap: 15px;
+    color: #666;
+}
+
+.logo-anchor h1 {
+    font-weight: normal;
+}
+
+.profile-photo {
+    border-radius: 50%;
+    width: 15%;
+}
+
+.info {
+    background-color: rgb(255, 128, 0);
+    font-weight: bold;
+    padding: 10px;
+    color: #fff;
+}
+
+.hero {
+    min-height: 350px;
+    display: flex;
+    position: relative;
+}
+
+.hero-text {
+    width: 50%;
+    padding: 50px 50px 100px 200px;
+    color: rgba(0, 0, 0, .87);
+}
+
+.hero-text h1 {
+    font-size: 44px;
+    font-weight: normal;
+    margin-bottom: 30px;
+}
+
+.hero-text p {
+    font-size: 20px;
+}
+
+.hero-bg {
+    background-image: url('https://ssl.gstatic.com/analytics/20240530-00/academy/static/hero_academy.jpg');
+    min-height: 350px;
+    background-repeat: no-repeat;
+    width: 50%;
+    background-position: center;
+    background-size: cover;
+}
+
+.material-symbols-outlined {
+    font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 48;
+    position: absolute;
+    bottom: 50px;
+    right: 49%;
+    padding: 10px;
+    background-color: lightblue;
+}
+
+.courses-wrapper {
+    background-color: rgb(109, 109, 211);
+    min-height: 50vh;
+    padding: 50px 200px;
+}
+
+.courses-wrapper h1 {
+    color: #fff;
+    margin-bottom: 30px;
+    font-weight: normal;
+}
+
+.courses-container {
+    min-height: 60vh;
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.course-card {
+    background-color: #fff;
+    width: 24%;
+    height: 400px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.course-card-upper-icon {
+    width: 15%;
+}
+
+.course-card-lower-icon {
+    width: 15%;
+    float: right;
+}
+
+.card-title {
+    margin: 20px 0;
+}
+
+.card-details {
+    margin: 15px 0 60px 0;
+    line-height: 1.5;
+}
+
+.instructors {
+    background-color: rgb(235, 235, 237);
+    min-height: 50vh;
+    padding: 50px 200px;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.instructors h1 {
+    color: #2a2828;
+    font-weight: normal;
+}
+
+.instructor-wrapper {
+    background-color: #f2f2f2;
+    box-shadow: 0 1px 5px 0 rgba(0,0,0,.2),0 2px 2px 0 rgba(0,0,0,.14),0 3px 1px -2px rgba(0,0,0,.12);
+    display: flex;
+}
+
+.instructor-text h2 {
+    padding: 20px;
+    border-bottom: thin solid #696868;
+    color: #2a2828;
+    font-weight: normal;
+}
+
+.instructor-text p {
+    padding: 20px;
+    line-height: 1.5;
+    
+}
+/* AOS */
+.autoShow{
+    animation: text-appear;
+    animation-timeline: view();
+    animation-range: entry 20% cover 100vh;
+}
+
+@keyframes text-appear{
+    from{
+        opacity: 0;
+        transform: translateY(70px);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.imageReveal{
+    /*  when uses scroll base animatons always use BOTH for better control and smooth experience  and the function view take two values when the animation finish and start respectively nothing extra  in most cases always use 10% and 5% as the view value works great for subtle scroll trigger effect*/
+    animation: image-slide both;
+    animation-timeline: view(50% 20%);
+}
+@keyframes image-slide{
+    from{
+        filter: saturate(0) contract(5) brightness(.2) blur(7px);
+        opacity: 0;
+        scale: .95;
+        translate: 0 4rem;
+    }
+    to{
+        filter: none;
+        opacity: 1;
+        scale: 1;
+        translate: 0 0;
+    }
+}
+
+.fade-up{
+    animation: fadeEffect both;
+    animation-timeline: view(10% 5%);
+    
+}
+
+.timeline-item:nth-child(1){
+     animation-range: entry 20% cover 40%;
+}
+.timeline-item:nth-child(2){
+     animation-range: entry 40% cover 60%;
+}
+.timeline-item:nth-child(3){
+     animation-range: entry 60% cover 80%;
+}
+.timeline-item:nth-child(4){
+     animation-range: entry 80% cover 100%;
+}
+@keyframes fadeEffect{
+    from{
+        opacity: 0;
+        transform: translateY(10px) scale(0.5);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.mini-courses h1 {
+    font-weight: normal;
+    font-size: xx-large;
+    margin: 0 0 20px 0;
+}
+
+.mini-courses p {
+    line-height: 1.5;
+}
+
+.mini-courses-wrapper {
+    display: flex;
+    gap: 15px;
+}
+
+.mini-courses-card {
+    text-align: center;
+    padding: 20px;
+    box-shadow: 0 1px 5px 0 rgba(0,0,0,.2),0 2px 2px 0 rgba(0,0,0,.14),0 3px 1px -2px rgba(0,0,0,.12);
+    background-color: #f2f2f2;
+
+}
+
+.mini-courses-card img {
+    width: 15%;
+    padding-bottom: 5px;
+}
+
+.mini-courses-wrapper a {
+    text-decoration: none;
+    color: #2a2828;
+}
+
+/* :horizontal-scroll-wrapper */
+.horizontal-scroll-wrapper{
+    /* overflow-x: auto; */
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    scrollbar-width: thin;
+    scrollbar-color: #89fc00;
+}
+
+/* Smooth Blur Animations */
+.autoBlur{
+    animation: autoBlurAnimation linear Both;
+    animation-timeline: view();
+}
+
+@keyframes autoBlurAnimation{
+        0%{
+            filter: blur(2px);
+        }
+        100%{
+            filter: blur(0px);
+        }
+}
+
+.footer {
+    background-color: #f2f2f2;
+}
+
+.footer h1 {
+    color: #2a2828;
+    margin-bottom: 30px;
+    font-weight: normal;
+    padding: 30px 0 0 200px;
+}
+
+.footer-wrapper {
+    padding: 30px 200px;
+    display: flex;
+    gap: 50px;
+    justify-content: center;
+}
+
+.footer-card {
+    text-align: center;
+    padding: 20px;
+    background-color: #f2f2f2;
+
+}
+
+.footer-card img {
+    width: 40%;
+    padding-bottom: 5px;
+}
+
+.footer-wrapper a {
+    text-decoration: none;
+    color: #2a2828;
+}
+
+footer {
+    padding: 20px;
+    background-color: #fff;
+}
+
+footer div {
+    text-align: right;
+}
+
+footer div a {
+    text-decoration: none;
+    margin: 0 30px;
+    font-weight: bold;
+    color: #2a2828;
+}
+
+footer div a select {
+    outline: none;
+    border: none;
+    font-weight: bold;
+    color: #2a2828;
+}
