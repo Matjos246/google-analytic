@@ -38,6 +38,11 @@ header {
     font-weight: bold;
     padding: 10px;
     color: #fff;
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+
 }
 
 .hero {
